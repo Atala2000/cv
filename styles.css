@@ -2,10 +2,17 @@
     box-sizing: content-box;
 }
 
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 body {
     margin: 0;
     font-family: sans-serif;
     position: absolute;
+    height: 100vh;
+    overflow: scroll; /* Hide scrollbars */
 }
 
 #navbar {
