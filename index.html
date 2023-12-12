@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation Page</title>
+  <link rel="stylesheet" href="./test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav id="navbar">
+    <!-- TODO Navbar hover effect -->
+    <header><h1>Documentation</h1></header>
+    <ul>
+      <a href="#Installing_and_configuring_Nginx" class="nav-link"><li>Installing and configuring Nginx</li></a>
+      <a href="#Requirments" class="nav-link"><li>Requirments</li></a>
+      <a href="#Configuration" class="nav-link"><li>Configuration</li></a>
+      <a href="#Testing" class="nav-link"><li>Testing</li></a>
+      <a href="#FAQ" class="nav-link"><li>FAQ</li></a>
+    </ul>
+  </nav>
+  <main id="main-doc">
+  <section class="main-section" id="Installing_and_configuring_Nginx">
+    <header><h2 style="text-align: center;">Installing and configuring Nginx</h2></header>
+  </section>
+  <section class="main-section" id="Requirments">
+    <header><h3>Requirments</h3></header>
+    <article class="requirments">
+    <p>The following pre-requisites are needed for you to install and configure Nginx</p>
+    <li>Ubuntu: a version higher than 16</li>
+    <li>Command line usage</li>
+    <li>Nginx: latest version better</li>
+    <li>A working server, can either be docker or a local machine</li>
+    <li>Not necessary but a working domain</li>
+    <p>Run the following command from the command line: </p>
+    <code>sudo apt update</code>
+    <br>
+    <code>sudo apt install nginx</code>
+  </article>
+  </section>
+  <section class="main-section" id="Configuration">
+    <header><h3>Configuration</h3></header>
+    <article>
+    <p>After installation Nginx has things called server blocks, essentially they are what you will use to provide static
+      content to your website
+      <p>After installation a directory will be created at /var/www/html.
+        <br> This is where your server blocks will be included, including their individual configuration files</p>
+    </p>
+    <p>
+      Create a simple file called index.html at the <span class="highlight">/var/www/html</span>, this will be your test file
+      Include the following text <p>
+        This is a test file
+      </p>
+    </p>
+  </article>
+  <article>
+    <p>The next step is to create a symbolic link of your server block to the nginx enabled sites</p>
+    <p>Navigate to /etc/nginx/sites-enabled and from here create a symbolic link to your configuration file that exists in sites-available folder</p>
+    <p><b>Tip: </b> The sites enabled folder is used to enable server blocks while sites available is used to store both inactive and active sites</p>
+  </article>
+  </section>
+  <section class="main-section" id="Testing">
+    <header><h3>Testing</h3></header>
+    <p>Now your site should be active, just incase open your config file that should exist in the sites available folder and esnure it follows the following standard: </p>
+    <article>
+      <p>
+<code>
+events {
+    # configuration of connection processing
+}
+<br>
+http {
+    # Configuration specific to HTTP and affecting all virtual servers  
+<br>
+    server {
+      <br>
+        # configuration of HTTP virtual server 1 
+        <br>      
+        location /html {
+            # configuration for processing URIs starting with '/html'
+            listen 80;
+            server_name __;
+        }
+        <br>
+    } 
+    <br>
+  </code>
+  <code>    server {
+        # configuration of HTTP virtual server 2
+    }
+}
+<br>
+</code>
+<code>
+stream {
+    # Configuration specific to TCP/UDP and affecting all virtual servers
+    server {
+        # configuration of TCP virtual server 1 
+    }
+}
+</code>
+      </p>
+      <p>Finally run sudo service nginx restart to restart the server</p>
+    </article>
+  </section>
+  <section class="main-section" id="FAQ">
+    <header><h3>FAQ</h3></header>
+    <h4>Common Problems</h4>
+    <div class="faq">
+      <div>
+    <span class="FAQ"><p>I'm getting a 404 error</p></span>
+    <p>Ensure that the port the nginx is listening to is free</p>
+  </div>
+  <div>
+    <span class="FAQ"><p>Server refuses to restart</p></span>
+    <p>Run <code>sudo nginx -t</code>  to test the config file, more often than not its a syntax error</p>
+  </div>
+  </div>
+  <p>For more go to the offical <a href="https://docs.nginx.com/nginx/admin-guide/web-server/web-server/">nginx</a> documentation</p>
+
+  </section>
+</main>
+</body>
+</html>
