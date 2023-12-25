@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Pacifico&display=swap" rel="stylesheet">
-    <title>Product Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&family=Kanit:wght@300&family=Lobster+Two&family=Pacifico&display=swap" rel="stylesheet">    <title>Product Landing Page</title>
 </head>
 <body>
     <header id="header">
@@ -14,9 +15,10 @@
         <img src="./images/7a3ec529632909.55fc107b84b8c.png" alt="company-logo" id="header-img" />
         </div>
         <nav id="nav-bar">
-            <a href="#form" class="nav-link">Contact</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#news" class="nav-link">Why Us</a>
+            <!-- TODO Change to buttons instead -->
+            <button class="nav-link"><a href="#form">Contact</a></button>
+            <button class="nav-link"><a href="#news">Services</a></button>
+            <button class="nav-link"><a href="#services">Why Us</a></button>
         </nav>
     </header>
     <main>
@@ -66,7 +68,6 @@
         </section>
         </div>
         <h2>Prices</h2>
-        <div class="dets-and-cont">
         <div class="details">
             <div class="price-table">
                 <h3>Pastries</h3>
@@ -122,7 +123,6 @@
                 <input type="submit" id="submit">
             </form>
         </section>
-    </div>
     <footer>
         <p>Created by Atala©2020</p>
     </footer>
