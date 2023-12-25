@@ -12,10 +12,9 @@
     <header id="header">
         <div class="image">
         <img src="./images/7a3ec529632909.55fc107b84b8c.png" alt="company-logo" id="header-img" />
-        <p>Isitsi Services</p>
         </div>
-        <nav id="navbar">
-            <a href="#" class="nav-link"></a>
+        <nav id="nav-bar">
+            <a href="#form" class="nav-link">Contact</a>
             <a href="#services" class="nav-link">Services</a>
             <a href="#news" class="nav-link">Why Us</a>
         </nav>
@@ -39,7 +38,7 @@
             </article>
         </section>
         <section class="iframe">
-            <video width="340" height="240" controls>
+            <video width="340" height="240" controls id="video">
                 <source src="https://i.ytimg.com/vi/a6epMQlNWtI/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AH-BIAC4AOKAgwIABABGHIgUSgtMA8=&rs=AOn4CLBHxY7fYYWevs0DfJGSHuWI3fe2EA"  />
             </video>
         </section>
@@ -98,10 +97,13 @@
             </div>
         </div>
         <section>
-            <form action="POST" id="form">
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
                 <fieldset>
                 <label for="name">Name: </label>
                 <input type="text" name="name"  placeholder="John Doe">
+                <label for="location">Location: </label>
+                <label for="email">Email: </label>
+                <input type="email" name="email"  id="email" placeholder="johndoe@123.com">
                 <label for="location">Location: </label>
                 <input type="text" name="location" placeholder="">
                 <label for="message">Message: </label>
@@ -117,7 +119,7 @@
                     <input type="radio" id="drinks" name="pastries">
                     <label for="pastries">Drink</label>
                 </fieldset>
-                <button type="submit">Submit</button>
+                <input type="submit" id="submit">
             </form>
         </section>
     </div>
