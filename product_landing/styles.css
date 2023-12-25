@@ -27,11 +27,19 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    /* background-color: var(--background-color1); */
+    background-color: rgb(240, 233, 233);
     font-family: var(--font-2);
-    min-height: 100px;
+    height: 100px;
     font-size: 30px;
-    background-color: var(--background-color2);
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+}
+
+main {
+    margin-top: 100px;
 }
 
 .image img {
@@ -148,7 +156,7 @@ h1, h2, h3 {
     max-width: 350px;
     margin: 20px auto;
     height: 350px;
-    grid-row: ;
+
 }
 
 form input{
